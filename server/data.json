@@ -1,0 +1,37 @@
+{
+    "diseases": {
+
+        "obesity": {
+            "workouts" : [
+                "10,000 to 13,000 steps per day, with at least 10 minutes of stepping at a moderate to vigorous intensity"        
+            ],
+            "diet" : {
+                "breakfast" : "3-4 egg whites, 1 piece of toasted bread, 1 cup low fat milk, fruits",
+                "lunch": "1 cup arhar dal + 1 chapatti + 1/2 cup low fat curd + salad",
+                "dinner": "Vegetable soup, salad"
+            }
+        },
+
+        "heart condition": {
+            "workouts" : [
+                "walking", "running", "elliptical"        
+            ],
+            "diet" : {
+                "breakfast" : "Oatmeal with added cinnamon and walnuts. Banana. Skimmed milk",
+                "lunch": "1 cup low-fat (1 percent or lower), plain yogurt with 1 teaspoon ground flaxseed, 1/2 cup peach halves, canned in juice",
+                "dinner": "4 ounces salmon, 1/2 cup green beans with 1 tablespoon toasted almonds"
+            }
+        },
+
+        "high blood pressure": {
+            "workouts" : [
+                "Walking- 10 minutes of moderate speed 3 times a day", "Weight Training", "Swimming"        
+            ],
+            "diet" : {
+                "breakfast" : "2 paratha(aloo/mooli/onion) with 2 tsp groundnut chutney",
+                "lunch": "1 cup rice+2 chapathi+fish-tuna (100gm) curry+cabbage and green peas sabji",
+                "dinner": "3 chapathi+1/2 cup bitter gourd(karela) sabji + 1/2 cup vegetable salad"
+            }
+        }
+    }
+}
