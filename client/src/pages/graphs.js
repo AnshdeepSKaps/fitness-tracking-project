@@ -1,42 +1,25 @@
 import * as React from "react";
 import { useState } from "react";
 import { url } from '../Components/serverUrl'
-import CanvasJSReact from '../CanvasJs/canvasjs.react';
 import { Chart } from "react-google-charts";
 import Navbar from '../Components/Navbar'
 
-// export const data = [
-//     [
-//         { type: "date", label: "Day" },
-//         { type: "number", label: "Value 1" },
-//         { type: "number", label: "Value 2" }
-//     ],
-
-//     [new Date("2015-01-01 10:22:26"), 40, 120],
-//     [new Date("2015-01-01 10:25:26"), 20, 80],
-//     [new Date("2015-01-01 11:35:26"), 20, 80],
-//     [new Date("2015-01-01 11:45:26"), 40, 50],
-//     [new Date("2015-01-01 12:00:26"), 60, 30],
-//     [new Date("2015-01-01 12:07:26"), 20, 80]
-
-// ]
-
 // export const dateTicks = [
-//     new Date("2015-01-01 10:02:26"),
-//     new Date("2015-01-01 11:07:26"),
-//     new Date("2015-01-01 12:07:26")
+//     new Date("2022-01-01 10:02:26"),
+//     new Date("2022-01-01 11:07:26"),
+//     new Date("2022-01-01 12:07:26")
 // ];
 
-export const options = {
-    hAxis: {
-        format: "dd-MM-yyyy HH:MM",
-        // ticks: dateTicks
-    },
+// export const options = {
+//     hAxis: {
+//         format: "dd-MM-yyyy",
+//         ticks: dateTicks
+//     },
 
-    width: "1000px",
-    height: "500px",
+//     width: "1000px",
+//     height: "500px",
 
-};
+// };
 
 export default function Graphs() {
 
@@ -56,8 +39,19 @@ export default function Graphs() {
             body: JSON.stringify(data)
         })
         const resp = await response.json()
-        console.log(resp)
-        setData(resp)
+
+        const columns = [
+            { type: "date", label: "Day" },
+            { type: "number", label: "Value 1" }
+        ]
+
+        resp.forEach(ele => {
+            ele[0] = new Date(ele[0])
+        })
+
+        const tempData = [columns, ...resp]
+        console.log(tempData)
+        setData(tempData)
     }
 
 
@@ -65,7 +59,6 @@ export default function Graphs() {
         <div>
 
             <Navbar />
-
             <div className="container">
                 <h1 className='mt-5 mb-5 text-white text-center'>Progress Visualized!</h1>
                 <div className="form-group d-flex justify-content-center ">
@@ -82,7 +75,9 @@ export default function Graphs() {
                 <Chart
                     chartType={"LineChart"}
                     data={data}
-                    options={options}
+
+                    width="1000px"
+                    height="700px"
                 />
             </div>}
 
