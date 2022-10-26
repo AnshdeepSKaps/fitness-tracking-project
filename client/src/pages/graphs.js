@@ -10,16 +10,7 @@ import Navbar from '../Components/Navbar'
 //     new Date("2022-01-01 12:07:26")
 // ];
 
-// export const options = {
-//     hAxis: {
-//         format: "dd-MM-yyyy",
-//         ticks: dateTicks
-//     },
 
-//     width: "1000px",
-//     height: "500px",
-
-// };
 
 export default function Graphs() {
 
@@ -42,7 +33,7 @@ export default function Graphs() {
 
         const columns = [
             { type: "date", label: "Day" },
-            { type: "number", label: "Value 1" }
+            { type: "number", label: "Value 1"}
         ]
 
         resp.forEach(ele => {
@@ -50,7 +41,6 @@ export default function Graphs() {
         })
 
         const tempData = [columns, ...resp]
-        console.log(tempData)
         setData(tempData)
     }
 
@@ -76,8 +66,32 @@ export default function Graphs() {
                     chartType={"LineChart"}
                     data={data}
 
-                    width="1000px"
-                    height="700px"
+                    options={{
+
+                        title: `Progress Graph for ${document.getElementById("exercise").value}`,
+                        titleTextStyle: { color: '#FFF' },
+
+                        hAxis: {
+                            title: "Date",
+                            textStyle: { color: '#FFF' },
+                            titleTextStyle: { color: '#DC3545' }
+                        },
+
+                        vAxis: {
+                            title: "Weight (kg)",
+                            textStyle: { color: '#FFF' },
+                            titleTextStyle: { color: '#DC3545' }
+                        },
+
+                        width: "1000px",
+                        height: "500px",
+
+                        lineWidth: 5,
+                        colors: ["#DC3545"],
+                        backgroundColor: {
+                            fill: "black",
+                        }
+                    }}
                 />
             </div>}
 
