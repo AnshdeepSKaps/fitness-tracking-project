@@ -1,9 +1,13 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Navbar from '../Components/Navbar'
 import { url } from '../Components/serverUrl'
 
 export default function Suggestion() {
+
+    useEffect(() => {
+        url.auth()
+    })
 
     let [resp, setResp] = useState(null)
 
@@ -47,6 +51,9 @@ export default function Suggestion() {
                         <option>Obesity</option>
                         <option>Heart Condition</option>
                         <option>High Blood Pressure</option>
+                        <option>Low Blood Pressure</option>
+                        <option>Diabetes</option>
+                        <option>Thyroid</option>
                     </select>
                     <button onClick={suggest} className='ms-3 btn btn-success'>Click</button>
                 </div>
@@ -56,15 +63,15 @@ export default function Suggestion() {
 
                 {resp && <div className="d-flex flex-column" style={{ gap: "2rem" }}>
                     <h2 className='mb-4 text-center text-white '>Diet</h2>
-                    <div style={style} className="">
+                    <div className="d-flex flex-column align-items-center justify-content-center" style={style} >
                         <h3 className='text-center text-success'>Breakfast</h3>
                         <div className='text-white text-center'>{resp.diet.breakfast}</div>
                     </div>
-                    <div style={style} className="">
+                    <div className="d-flex flex-column align-items-center justify-content-center" style={style} >
                         <h3 className='text-center text-warning'>Lunch</h3>
                         <div className='text-white text-center'>{resp.diet.lunch}</div>
                     </div>
-                    <div style={style} className="">
+                    <div className="d-flex flex-column align-items-center justify-content-center" style={style} >
                         <h3 className='text-center text-danger'>Dinner</h3>
                         <div className='text-white text-center'>{resp.diet.dinner}</div>
                     </div>

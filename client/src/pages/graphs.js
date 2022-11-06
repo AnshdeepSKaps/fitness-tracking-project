@@ -3,6 +3,7 @@ import { useState } from "react";
 import { url } from '../Components/serverUrl'
 import { Chart } from "react-google-charts";
 import Navbar from '../Components/Navbar'
+import { useEffect } from "react";
 
 // export const dateTicks = [
 //     new Date("2022-01-01 10:02:26"),
@@ -10,9 +11,12 @@ import Navbar from '../Components/Navbar'
 //     new Date("2022-01-01 12:07:26")
 // ];
 
-
-
 export default function Graphs() {
+
+    useEffect( () => {
+        url.auth()
+    })
+
 
     const [data, setData] = useState(null)
 
@@ -33,7 +37,7 @@ export default function Graphs() {
 
         const columns = [
             { type: "date", label: "Day" },
-            { type: "number", label: "Value 1"}
+            { type: "number", label: "Value 1" }
         ]
 
         resp.forEach(ele => {
@@ -44,18 +48,26 @@ export default function Graphs() {
         setData(tempData)
     }
 
-
     return (
         <div>
-
             <Navbar />
             <div className="container">
                 <h1 className='mt-5 mb-5 text-white text-center'>Progress Visualized!</h1>
                 <div className="form-group d-flex justify-content-center ">
                     <label className='text-white text-center' style={{ fontSize: "1.5rem", marginRight: "20px" }} htmlFor="exercise">Select Exercise: </label>
                     <select id="exercise" name='exercise' className="" style={{ width: "300px", height: "40px", textAlign: "center", fontSize: "1.5rem" }}>
+                        <option>Barbell Row</option>
+                        <option>Lat Pulldown</option>
+                        <option>Dumbell Row</option>
                         <option>Bench Press</option>
                         <option>Incline Bench Press</option>
+                        <option>Overhead Press</option>
+                        <option>DB Chest Press</option>
+                        <option>DB Shoulder Press</option>
+                        <option>Squat</option>
+                        <option>Romanian Deadlift</option>
+                        <option>Leg Press</option>
+                        <option>Lunges</option>
                     </select>
                     <button onClick={graphFunction} className='ms-3 btn btn-success'>Click</button>
                 </div>
@@ -94,7 +106,6 @@ export default function Graphs() {
                     }}
                 />
             </div>}
-
         </div>
     )
 }

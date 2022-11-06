@@ -32,7 +32,7 @@ export default function Navbar() {
           height: "10vh",
           width: "10vw"
         }} className="mx-auto d-flex justify-content-center align-items-center">
-          <Link to="./add" className="btn btn-danger">Add Workout</Link>
+          <Link to="/add" className="btn btn-danger">Add Workout</Link>
         </div>
       </div>
     </nav>

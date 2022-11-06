@@ -4,7 +4,12 @@ import Navbar from '../Components/Navbar'
 import { url } from '../Components/serverUrl'
 import WorkoutCarousel from '../Components/WorkoutCarousel'
 
+
 export default function LastWeek() {
+
+    useEffect(() => {
+        url.auth()
+    })
 
     const [workouts, setWorkouts] = useState(null)
 

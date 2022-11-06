@@ -32,6 +32,51 @@
                 "lunch": "1 cup rice+2 chapathi+fish-tuna (100gm) curry+cabbage and green peas sabji",
                 "dinner": "3 chapathi+1/2 cup bitter gourd(karela) sabji + 1/2 cup vegetable salad"
             }
+        },
+
+        "low blood pressure": {
+            "workouts" : [
+                "walking", "running", "elliptical"      
+            ],
+            "diet" : {
+                "breakfast" : "Milk n Cornflakes with strawberry(3-4) + Cashew nuts(3) + Almonds(4)",
+                "lunch": "Rice flakes pulav (1 cup) + Cauliflower curry (1/2 cup) + Roasted papad (1-2)",
+                "dinner": "Chapati (2) + Baked Carrot n Beetroot (1/2 cup)"
+            }
+        },
+
+        "diabetes": {
+            "workouts" : [
+                "Walking- 10 minutes of moderate speed 3 times a day", "Swim- This is one aerobic exercise that doesn't strain your joints like other ones can. It also lets you work muscles in your upper and lower body at the same time. Hitting the water is also good for your heart", "Strength Training- You do this with free weights or resistance bands. It can lower your blood sugar and help make your muscles and bones stronger. You get the most out of it if you do it twice a week"        
+            ],
+            "diet" : {
+                "breakfast" : "1 cup low-fat plain Greek yogurt + ¼ cup blueberries + 3 Tbsp. chopped walnuts",
+                "lunch": "1 large pear + 1 serving White Bean & Veggie Salad",
+                "dinner": "unsalted dry-roasted almonds + 1 serving Garlic Butter-Roasted Salmon with Potatoes & Asparagus"
+            }
+        },
+
+        "thyroid": {
+            "workouts" : [
+                "Yoga- Yoga offers cardio, strength, flexibility, and balance benefits", "Walking- You can start with walks around the neighbourhood, walking instead of driving to errands, or even walking inside a mall if the weather is bad", "Resistance bands- You can use resistance bands to perform many exercises, like rowing, lat pull-downs, and leg exercises"        
+            ],
+            "diet" : {
+                "breakfast" : "1-2 eggs, a glass of milk, or salmon, and toast",
+                "lunch": "Handful of brazil nuts with a cup of green tea. Grilled fish with vegetables topped in olive oil",
+                "dinner": "Roasted hazel nuts. Grilled vegetables garnished with olive oil"
+            }
         }
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

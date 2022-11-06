@@ -1,12 +1,11 @@
 import mongoose from "mongoose"
 
 const userSchema = mongoose.Schema({
-    Date: Date,
-    Exercises: [{ type: String }],
-    Sets: [{ type: Number }],
-    Reps: [{ type: Number }],
-    Weights: [{ type: Number }],
-    Remarks: [{ type: String }],
+    Username: String,
+    Password: String,
+    Email: String,
+    Age: Number,
+    Contact: String
 })
 
 const User = mongoose.model('User', userSchema)

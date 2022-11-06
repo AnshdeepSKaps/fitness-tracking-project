@@ -6,6 +6,10 @@ import { url } from '../Components/serverUrl'
 
 export default function LastWorkout() {
 
+    useEffect( () => {
+        url.auth()
+    })
+
     let [workout, setWorkout] = useState(null)
 
     const fetchLastWorkout = async () => {
