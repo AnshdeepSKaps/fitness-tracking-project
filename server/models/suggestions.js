@@ -10,6 +10,7 @@ const suggestionSchema = mongoose.Schema({
     }
 })
 
-const Suggestion = mongoose.model('User', suggestionSchema)
+const Suggestion = mongoose.model('suggestions', suggestionSchema)
+
 
 export default Suggestion

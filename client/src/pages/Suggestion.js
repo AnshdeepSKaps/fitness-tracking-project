@@ -65,15 +65,15 @@ export default function Suggestion() {
                     <h2 className='mb-4 text-center text-white '>Diet</h2>
                     <div className="d-flex flex-column align-items-center justify-content-center" style={style} >
                         <h3 className='text-center text-success'>Breakfast</h3>
-                        <div className='text-white text-center'>{resp.diet.breakfast}</div>
+                        <div className='text-white text-center'>{resp.Diet.Breakfast}</div>
                     </div>
                     <div className="d-flex flex-column align-items-center justify-content-center" style={style} >
                         <h3 className='text-center text-warning'>Lunch</h3>
-                        <div className='text-white text-center'>{resp.diet.lunch}</div>
+                        <div className='text-white text-center'>{resp.Diet.Lunch}</div>
                     </div>
                     <div className="d-flex flex-column align-items-center justify-content-center" style={style} >
                         <h3 className='text-center text-danger'>Dinner</h3>
-                        <div className='text-white text-center'>{resp.diet.dinner}</div>
+                        <div className='text-white text-center'>{resp.Diet.Dinner}</div>
                     </div>
                 </div>
                 }
@@ -81,7 +81,7 @@ export default function Suggestion() {
                 {resp && <div className="workout-column d-flex flex-column" style={{ gap: "2rem" }}>
                     <h2 className='mb-4 text-center text-white'>Workout</h2>
                     {
-                        Array.from(resp.workouts).map(e => {
+                        Array.from(resp.Workouts).map(e => {
                             return <div style={style} className="d-flex align-items-center justify-content-center">
                                 <div className='text-center text-white'>{e[0].toUpperCase() + e.substring(1)}</div>
                             </div>

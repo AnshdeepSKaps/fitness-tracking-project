@@ -8,6 +8,7 @@ import suggestRoutes from './routes/suggestRoutes.js'
 import graphRoutes from './routes/graphRoutes.js'
 import loginRoutes from './routes/loginRoutes.js'
 
+
 // import con from './database/sql.cjs'
 
 const app = express()

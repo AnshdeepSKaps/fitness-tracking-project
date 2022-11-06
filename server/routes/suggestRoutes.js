@@ -1,18 +1,14 @@
 import express from 'express'
-
-import { readFile } from 'fs/promises';
-const data = JSON.parse(
-    await readFile(
-        new URL('../data.json', import.meta.url)
-    )
-);
+import Suggestion from '../models/suggestions.js';
 
 const router = express.Router()
 
-router.post('', (req, res) => {
+router.post('', async (req, res) => {
 
     let condition = req.body.cond
-    res.json(data.diseases[`${condition.toLowerCase()}`])
+    const result = await Suggestion.find({ Disease: condition.toLowerCase() })
+    res.json(result[0])
+
 })
 
 export default router
