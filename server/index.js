@@ -1,13 +1,12 @@
-import express from 'express'
-import bodyParser from 'body-parser'
 import cors from 'cors'
+import express from 'express'
 import mongoose from 'mongoose'
+import bodyParser from 'body-parser'
 import addRoutes from './routes/addRoutes.js'
-import fetchRoutes from './routes/fetchRoutes.js'
-import suggestRoutes from './routes/suggestRoutes.js'
 import graphRoutes from './routes/graphRoutes.js'
 import loginRoutes from './routes/loginRoutes.js'
-
+import fetchRoutes from './routes/fetchRoutes.js'
+import suggestRoutes from './routes/suggestRoutes.js'
 
 // import con from './database/sql.cjs'
 
