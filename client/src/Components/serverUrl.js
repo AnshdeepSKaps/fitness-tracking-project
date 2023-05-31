@@ -1,5 +1,5 @@
 export let url = {
-    url: "http://localhost:5000/",
+    url: "https://fitness-tracking-project.vercel.app/",
     auth: async () => {
         const resp = await fetch(url.url + "login/session")
         const data = await resp.json()
