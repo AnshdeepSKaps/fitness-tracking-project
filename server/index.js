@@ -24,8 +24,8 @@ const corsOptions = {
     methods: "GET,POST,OPTIONS"
 }
 
-app.options('*', cors(corsOptions))
 app.use(cors(corsOptions))
+app.options('https://dapper-capybara-688970.netlify.app', cors(corsOptions))
 app.use(cookies())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
