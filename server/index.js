@@ -17,7 +17,7 @@ const app = express()
 app.use(express.json())
 
 const corsOptions = {
-    origin: "https://dapper-capybara-688970.netlify.app/",
+    origin: "https://dapper-capybara-688970.netlify.app",
     credentials: true,            //access-control-allow-credentials:true
     optionSuccessStatus: 200,
     methods: "GET,POST,OPTIONS"

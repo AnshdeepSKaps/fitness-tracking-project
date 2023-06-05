@@ -4,6 +4,9 @@ export let url = {
     auth: async () => {
         const res = await fetch(url.url + "page", {
             credentials: 'include',
+            headers:{
+                origin: ""
+            }
         })
 
         const data = await res.json()
