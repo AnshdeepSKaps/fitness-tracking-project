@@ -1,8 +1,6 @@
 import express from "express";
-import jwt from "jsonwebtoken"
 import User from "../models/user.js";
-
-global.localStorage = new LocalStorage('./scratch');
+import jwt from "jsonwebtoken"
 
 const router = express.Router()
 
