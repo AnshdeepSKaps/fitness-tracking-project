@@ -26,9 +26,9 @@ const corsOptions = {
 
 // app.use(function (req, res, next) {
 
-    
 // });
 
+app.options('login/page', cors(corsOptions))
 app.use(cors(corsOptions))
 app.options('https://dapper-capybara-688970.netlify.app', cors(corsOptions))
 app.use(cookies())
