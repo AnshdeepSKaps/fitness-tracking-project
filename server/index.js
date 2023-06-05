@@ -20,14 +20,13 @@ const corsOptions = {
     origin: "https://dapper-capybara-688970.netlify.app",
     credentials: true,            //access-control-allow-credentials:true
     optionSuccessStatus: 200,
-    methods: "GET,POST,OPTIONS"
+    methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']
 }
 
 app.use(cors(corsOptions))
 app.use(cookies())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
 app.use('/add', addRoutes)
 app.use('/fetch', fetchRoutes)
 app.use('/suggest', suggestRoutes)
