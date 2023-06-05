@@ -21,9 +21,10 @@ router.post('', async (req, res) => {
 
         res.cookie("access_token", token, {
             httpOnly: true,
-            secure: false,
+            secure: true,
             maxAge: 5 * 60 * 1000
         })
+
         res.send({ status: "ok" })
     }
     else

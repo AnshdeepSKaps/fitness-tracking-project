@@ -16,6 +16,7 @@ export default function Login() {
         const res = await fetch(url.url + 'login', {
             method: "POST",
             mode: "cors",
+            credentials: 'include',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -27,7 +28,7 @@ export default function Login() {
         // console.log(data)
 
         if (data.status === "ok") {
-            window.location = "http://localhost:3000/"
+            window.location = url.client
         }
 
         if (data.status === "invalid") {

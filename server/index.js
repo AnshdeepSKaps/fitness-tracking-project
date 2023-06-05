@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import cors from 'cors'
 import express from 'express'
 import mongoose from 'mongoose'
@@ -20,7 +21,7 @@ const corsOptions = {
     origin: "https://dapper-capybara-688970.netlify.app",
     credentials: true,            //access-control-allow-credentials:true
     optionSuccessStatus: 200,
-    methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']
+    methods: "GET,POST"
 }
 
 app.use(cors(corsOptions))
