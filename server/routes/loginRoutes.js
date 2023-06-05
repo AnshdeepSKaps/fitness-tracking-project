@@ -1,7 +1,6 @@
 import express from "express";
-import User from "../models/user.js";
-import { LocalStorage } from "node-localstorage";
 import jwt from "jsonwebtoken"
+import User from "../models/user.js";
 
 global.localStorage = new LocalStorage('./scratch');
 
@@ -53,23 +52,6 @@ router.post('/reg', async (req, res) => {
         else
             console.log("Saved!")
     })
-})
-
-router.get('/session', async (req, res) => {
-
-    if (localStorage.getItem("username") == null) {
-        const resp = {
-            info: "no"
-        }
-        res.json(resp)
-    }
-    else {
-        const data = {
-            info: "yes",
-            username: localStorage.getItem("username")
-        }
-        res.json(data)
-    }
 })
 
 
