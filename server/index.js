@@ -1,8 +1,10 @@
 import cors from 'cors'
 import express from 'express'
 import mongoose from 'mongoose'
+import cookies from 'cookie-parser'
 import bodyParser from 'body-parser'
 import addRoutes from './routes/addRoutes.js'
+import pageRoutes from './routes/pageRoutes.js'
 import graphRoutes from './routes/graphRoutes.js'
 import loginRoutes from './routes/loginRoutes.js'
 import fetchRoutes from './routes/fetchRoutes.js'
@@ -13,7 +15,16 @@ import suggestRoutes from './routes/suggestRoutes.js'
 const app = express()
 
 app.use(express.json())
-app.use(cors())
+
+const corsOptions = {
+    origin: "http://localhost:3000",
+    credentials: true,            //access-control-allow-credentials:true
+    optionSuccessStatus: 200,
+    methods: "GET,POST,OPTIONS"
+}
+
+app.use(cors(corsOptions))
+app.use(cookies())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -22,6 +33,7 @@ app.use('/fetch', fetchRoutes)
 app.use('/suggest', suggestRoutes)
 app.use('/graph', graphRoutes)
 app.use('/login', loginRoutes)
+app.use('/page', pageRoutes)
 
 app.get('', (req, res) => {
     res.send("Welcome to TrackAps")

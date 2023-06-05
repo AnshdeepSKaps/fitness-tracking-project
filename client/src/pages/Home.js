@@ -1,14 +1,14 @@
 import React from 'react'
+import { useEffect } from 'react'
+import Navbar from '../Components/Navbar'
+import { url } from '../Components/serverUrl'
 import Background from '../Components/Background'
 import TrackContainer from '../Components/TrackContainer'
-import Navbar from '../Components/Navbar'
 import SuggestionCard from '../Components/suggestionCard'
-import { useEffect } from 'react'
-import { url } from '../Components/serverUrl'
 
 export default function Home() {
 
-    useEffect( () => {
+    useEffect(() => {
         url.auth()
     })
 

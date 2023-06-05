@@ -13,10 +13,9 @@ import { useEffect } from "react";
 
 export default function Graphs() {
 
-    useEffect( () => {
+    useEffect(() => {
         url.auth()
     })
-
 
     const [data, setData] = useState(null)
 

@@ -1,12 +1,15 @@
 export let url = {
-    url: "https://fitness-tracking-project.vercel.app/",
+    url: "https://fitness-tracking-project-32ag7ad0i-anshdeepskaps.vercel.app/",
+    client: "https://dapper-capybara-688970.netlify.app/",
     auth: async () => {
-        const resp = await fetch(url.url + "login/session")
-        const data = await resp.json()
+        const res = await fetch(url.url + "page", {
+            credentials: 'include',
+        })
 
-        if (data.info == "no") {
-            window.open('http://localhost:3000/login', "_self")
+        const data = await res.json()
+
+        if (data.status === "invalid") {
+            window.location = url.client
         }
-
     }
 }

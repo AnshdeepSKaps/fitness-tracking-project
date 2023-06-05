@@ -6,7 +6,7 @@ import { url } from '../Components/serverUrl'
 
 export default function AddWorkout() {
 
-    useEffect( () => {
+    useEffect(() => {
         url.auth()
     })
 

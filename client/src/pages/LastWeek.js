@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import Background from '../Components/Background'
 import Navbar from '../Components/Navbar'
 import { url } from '../Components/serverUrl'
+import Background from '../Components/Background'
+import React, { useState, useEffect } from 'react'
 import WorkoutCarousel from '../Components/WorkoutCarousel'
-
 
 export default function LastWeek() {
 

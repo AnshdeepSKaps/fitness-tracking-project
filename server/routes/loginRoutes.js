@@ -1,61 +1,76 @@
 import express from "express";
 import User from "../models/user.js";
 import { LocalStorage } from "node-localstorage";
+import jwt from "jsonwebtoken"
 
-// global.localStorage = new LocalStorage('./scratch');
+global.localStorage = new LocalStorage('./scratch');
 
 const router = express.Router()
 
-// router.post('', async (req, res) => {
+router.post('', async (req, res) => {
 
-//     const username = req.body.username;
-//     const password = req.body.password;
+    // console.log(req.body)
 
-//     const result = await User.find({ Username: username, Password: password })
+    const username = req.body.username
+    const password = req.body.password
 
-//     if (result.length == 1) {
-//         localStorage.setItem("username", username)
-//         localStorage.setItem("password", password)
-//         res.redirect("http://localhost:3000/")
-//     }
-// })
+    const user = await User.findOne({ Username: username, Password: password })
 
-// router.post('/reg', async (req, res) => {
+    // console.log(user)
 
-//     const data = req.body
+    if (user) {
+        const email = user.Email
+        const token = jwt.sign({ email: email, username: username, }, process.env.MY_KEY)
 
-//     const insertionData = {
-//         Username: data.username,
-//         Password: data.password,
-//         Email: data.email,
-//         Age: data.age,
-//         Contact: data.contact
-//     }
+        res.cookie("access_token", token, {
+            httpOnly: true,
+            secure: false,
+            maxAge: 5 * 60 * 1000
+        })
+        res.send({ status: "ok" })
+    }
+    else
+        res.json({ status: "invalid" })
 
-//     const document = new User(insertionData)
-//     document.save(err => {
-//         if (err) console.log(err)
-//         else
-//             console.log("Saved!")
-//     })
-// })
 
-// router.get('/session', async (req, res) => {
+})
 
-//     if (localStorage.getItem("username") == null) {
-//         const resp = {
-//             info: "no"
-//         }
-//         res.json(resp)
-//     }
-//     else {
-//         const data = {
-//             info: "yes",
-//             username: localStorage.getItem("username")
-//         }
-//         res.json(data)
-//     }
-// })
+router.post('/reg', async (req, res) => {
+
+    const data = req.body
+
+    const insertionData = {
+        Username: data.username,
+        Password: data.password,
+        Email: data.email,
+        Age: data.age,
+        Contact: data.contact
+    }
+
+    const document = new User(insertionData)
+    document.save(err => {
+        if (err) console.log(err)
+        else
+            console.log("Saved!")
+    })
+})
+
+router.get('/session', async (req, res) => {
+
+    if (localStorage.getItem("username") == null) {
+        const resp = {
+            info: "no"
+        }
+        res.json(resp)
+    }
+    else {
+        const data = {
+            info: "yes",
+            username: localStorage.getItem("username")
+        }
+        res.json(data)
+    }
+})
 
 
 export default router
