@@ -21,9 +21,10 @@ const corsOptions = {
     origin: "https://dapper-capybara-688970.netlify.app",
     credentials: true,            //access-control-allow-credentials:true
     optionSuccessStatus: 200,
-    methods: "GET,POST"
+    methods: "GET,POST,OPTIONS"
 }
 
+app.options('*', cors(corsOptions))
 app.use(cors(corsOptions))
 app.use(cookies())
 app.use(bodyParser.json());
