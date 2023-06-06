@@ -15,6 +15,14 @@ router.get("", authorization, async (req, res) => {
     }
 })
 
+// "routes": [
+//     {
+//         "src": "/(.*)",
+//         "dest": "/"
+
+//     }
+// ],
+
 // "headers": {
 //     "Access-Control-Allow-Origin": "https://dapper-capybara-688970.netlify.app",
 //         "Access-Control-Allow-Credentials": "true",
