@@ -15,19 +15,17 @@ import suggestRoutes from './routes/suggestRoutes.js'
 
 const app = express()
 
-app.use(express.json())
-
+// optionSuccessStatus: 200,
+// methods: "GET,POST,OPTIONS",
+// origin: "http://localhost:3000",
 const corsOptions = {
-
+    
     origin: "https://dapper-capybara-688970.netlify.app",
-    // origin: "http://localhost:3000",
     credentials: true,
-
-    // optionSuccessStatus: 200,
-    // methods: "GET,POST,OPTIONS",
 }
 
 app.use(cors(corsOptions))
+app.use(express.json())
 app.use(cookies())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
