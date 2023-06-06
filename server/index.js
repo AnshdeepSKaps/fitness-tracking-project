@@ -18,19 +18,16 @@ const app = express()
 app.use(express.json())
 
 const corsOptions = {
+
     origin: "https://dapper-capybara-688970.netlify.app",
-    credentials: true,            //access-control-allow-credentials:true
-    optionSuccessStatus: 200,
-    methods: "GET,POST,OPTIONS"
+    // origin: "http://localhost:3000",
+    credentials: true,
+
+    // optionSuccessStatus: 200,
+    // methods: "GET,POST,OPTIONS",
 }
 
-// app.use(function (req, res, next) {
-
-// });
-
-app.options('login/page', cors(corsOptions))
 app.use(cors(corsOptions))
-app.options('https://dapper-capybara-688970.netlify.app', cors(corsOptions))
 app.use(cookies())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

@@ -4,7 +4,6 @@ import moment from "moment";
 
 const router = express.Router()
 
-
 router.post("", async (req, res) => {
 
     const exercise = req.body.exercise
